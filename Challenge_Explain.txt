@@ -1,0 +1,38 @@
+	Credit Risk Sampling
+
+Four algorithms were evaluated to determine which provided the most reliable results for credit risk.
+They are Naive random sampling, SMOTE oversampling, ClusterCentroids resampling, Combination Sampling.
+
+
+The below ranks each algorithm used in the credit_risk_resampling file in descending order.
+
+
+Precision:
+Each algorithm has a precision of .99. Specifically, each algorithm was able to identify 100% of the low risk loans
+and only 1% of the high-risk loans. this means that the algorithms were generating a significant number of false positives in searching
+for high risk loans. Therefore, positives for high risk loans are not very reliable in any of the studied algorithms.
+
+Recall:
+ 1. SMOTE (.65)
+ 2. Naive random sampling (.64)
+ 3. Combination (.60)
+ 4. ClusterCentroids (.39)
+
+ SMOTE had the highest recall rate, which means this algorithm has the best chance of accurately predicting whether a loan is high or 
+ low risk.
+
+Balance Accuracy Score:
+
+1. Combination (.654)
+2. Naive random sampling (.649)
+3. SMOTE (.649)
+4. ClusterCentroids (.512)
+
+
+Algorithm Selection
+Because of the nature of the loan industry, it is more important to identify all high-risk loans rather than detect low risk versus high risk precisely.
+identify high risk from low risk loans. So, in choosing which algorithm to utilize, I more heavily weight precision rather
+than accuracy. For that reason, I recommend the SMOTE algorithm as it has the highest recall rate.
+
+--Credit Risk Ensemble
+As metioned in the previous section, because of the nature of the loan industry, there is more interest in identifying as many high risk loans as possible than accurately idenfitying both low and high risk loans. Therefore, precision and recall should be valued higher than accuracy. In comparing the Balanced Random forest and EasyEnsemble alogirthims both scored very similarly. Both had recalls of .64 and balanced accuracy scores of .649. I find that either would be interchangable with the other.
